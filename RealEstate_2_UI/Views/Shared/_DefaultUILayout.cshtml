@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- Header -->
+@await Component.InvokeAsync("_UIHeaderComponentPartial")
+<!-- Header -->
+<body>
+    
+    @await Component.InvokeAsync("_UINavbarComponentPartial")
+
+    @await Component.InvokeAsync("_UIHeroComponentPartial")
+    
+        @RenderBody()
+
+
+    <!-- /.site-footer -->
+    @await Component.InvokeAsync("_UIFooterComponentPartial")
+    <!-- /.site-footer -->
+
+    <!-- Preloader -->
+
+
+    <div id="overlayer"></div>
+    <div class="loader">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <script src="~/property-1.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="~/property-1.0.0/js/tiny-slider.js"></script>
+    <script src="~/property-1.0.0/js/aos.js"></script>
+    <script src="~/property-1.0.0/js/navbar.js"></script>
+    <script src="~/property-1.0.0/js/counter.js"></script>
+    <script src="~/property-1.0.0/js/custom.js"></script>
+</body>
+</html>
+
+
+

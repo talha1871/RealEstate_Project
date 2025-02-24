@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DefaultUILayout.cshtml";
+}
+
+@await Component.InvokeAsync("_UIPopularProductsComponentPartial")
+@await Component.InvokeAsync("_UIFeaturesComponentPartial")
+@await Component.InvokeAsync("_UICustomerComponentPartial")
+@await Component.InvokeAsync("_UIWhoWeAreComponentPartial")
+@await Component.InvokeAsync("_UIAgentsComponentPartial")
+
+
+@* <h1>_DefaultUILayout</h1> *@
+
+
+
+
