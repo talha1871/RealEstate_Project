@@ -23,6 +23,10 @@ namespace RealEstate_2_UI.ViewComponents.UI_Layout
             {
                 var jsonData = await jsonMes.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultWhoWeAreDto>>(jsonData);
+
+                // ViewBag kullanımı aşağısı gibi kullanılacak
+                //var values = JsonConvert.DeserializeObject<List<ResultWhoWeAreDto>>(jsonData);
+                //ViewBag.title = values.select(x=>x.title1).fitstandefault();
                 return View(values);
             }
             return View();

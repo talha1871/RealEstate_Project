@@ -55,7 +55,7 @@ namespace RealEstate_2_API.Repositories.CategoryRepositories
 
         }
 
-        public async void UpdateCategory(UpdateCategoryDto categoryDto) //Kategori Update İşlemi Adım-2
+        public async void UpdateCategory(UpdatedCategoryDto categoryDto) //Kategori Update İşlemi Adım-2
         {
             string query = "Update Category Set CategoryName=@categoryName, CategoryStatus=@categoryStatus where CategoryID=@categoryID";
             var parameters = new DynamicParameters();

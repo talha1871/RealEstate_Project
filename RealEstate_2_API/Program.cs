@@ -4,6 +4,7 @@ using RealEstate_2_API.Repositories.CategoryRepositories;
 using RealEstate_2_API.Repositories.CustomerRepositories;
 using RealEstate_2_API.Repositories.FeatureRepositories;
 using RealEstate_2_API.Repositories.ProductRepositories;
+using RealEstate_2_API.Repositories.StatisticsRepositories;
 using RealEstate_2_API.Repositories.WhoWeAreRepositories;
 using System.ComponentModel;
 
@@ -17,6 +18,7 @@ builder.Services.AddTransient<IFeatureRepo, FeatureRepo>();
 builder.Services.AddTransient<ICustomerRepo, CustomerRepo>();
 builder.Services.AddTransient<IWhoWeAreRepo, WhoWeAreRepo>();
 builder.Services.AddTransient<IAgentRepo, AgentRepo>();
+builder.Services.AddTransient<IStatisticsRepositories, StatisticsRepositories>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

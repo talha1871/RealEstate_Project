@@ -10,7 +10,7 @@ namespace RealEstate_2_API.Repositories.CategoryRepositories
 
         public void DeleteCategory(int id); // Kategori Silme İşlemi Adım-1
 
-        public void UpdateCategory(UpdateCategoryDto categoryDto); // Kategori Update İşlemi Adım-1
+        public void UpdateCategory(UpdatedCategoryDto categoryDto); // Kategori Update İşlemi Adım-1
 
         public Task<GetByIDCategoryDto> GetByID(int id); // ID'ye göre kategori getirme Adım-1
 

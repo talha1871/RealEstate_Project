@@ -4,6 +4,9 @@ namespace RealEstate_2_API.Repositories.CustomerRepositories
 {
     public interface ICustomerRepo
     {
-        public Task<List<ResultCustomerDto>> GetListCustomerAsync();
+        public Task<List<ResultCustomerDto>> GetAllCustomerAsync();
+
+        
+
     }
 }

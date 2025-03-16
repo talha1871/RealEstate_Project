@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using RealEstate_2_API.Models.D_Context;
 using RealEstate_2_API.Repositories.CustomerRepositories;
 
 namespace RealEstate_2_API.Controllers
@@ -9,8 +8,6 @@ namespace RealEstate_2_API.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-
-
         private readonly ICustomerRepo _customerRepo;
 
         public CustomerController(ICustomerRepo customerRepo)
@@ -22,8 +19,9 @@ namespace RealEstate_2_API.Controllers
 
         public async Task<IActionResult> GetListCustomer()
         {
-            var values = await _customerRepo.GetListCustomerAsync();
+            var values = await _customerRepo.GetAllCustomerAsync();
             return Ok(values);
+
         }
     }
 }

@@ -35,7 +35,7 @@ namespace RealEstate_2_API.Controllers
 
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> DeleteCategory(int id) //Kategori Silme İşlemi Adım-3
         {
@@ -46,7 +46,7 @@ namespace RealEstate_2_API.Controllers
 
         [HttpPut]
 
-        public async Task<IActionResult> UpdateCategory(UpdateCategoryDto updateCategoryDto)
+        public async Task<IActionResult> UpdateCategory(UpdatedCategoryDto updateCategoryDto)
         {
             _categoryRepo.UpdateCategory(updateCategoryDto);
             return Ok("Kategori Başarılı Bir Şekilde Güncellendi!");

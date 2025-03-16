@@ -1,0 +1,51 @@
+﻿@model List<ResultProductDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h1>Index</h1>
+
+<!-- Kategori Sayfası -->
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="bg-light rounded h-100 p-4">
+                <h6 class="mb-4">Responsive Table</h6>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Ürün Adı</th>
+                                <th scope="col">Ürün Fiyatı</th>
+                                <th scope="col">Şehir Bilgisi</th>
+                                <th scope="col">Bölge Bilgisi</th>
+                                <th scope="col">Adres Bilgisi</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@item.ProductID</th>
+                                    <td>@item.ProductTitle</td>
+                                    <td>@item.ProductPrice</td>
+                                    <td>@item.ProductCity</td>
+                                    <td>@item.ProductDistrict</td>
+                                    <td>@item.ProductAddress</td>
+
+                                    <td><a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-outline-danger">Ürün Sil</a></td>
+                                    <td><a href="/Product/UpdateProduct/@item.ProductID" class="btn btn-outline-warning">Ürün Güncelle</a></td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <a href="/Product/CreateProduct" class="btn btn-outline-success">Kategori Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

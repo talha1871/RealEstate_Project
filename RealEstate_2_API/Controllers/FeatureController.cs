@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RealEstate_2_API.Dtos.FeatureDtos;
 using RealEstate_2_API.Repositories.FeatureRepositories;
 
 namespace RealEstate_2_API.Controllers
@@ -21,6 +22,14 @@ namespace RealEstate_2_API.Controllers
         {
             var values = await _featureRepo.GetListFeatureAsync();
             return Ok(values);
+        }
+
+        [HttpPut]
+
+        public async Task<IActionResult> UpdateFeature(UpdateFeatureDto updateFeatureDto)
+        {
+            _featureRepo.UpdateFeature(updateFeatureDto);
+            return Ok("Feature Güncellendi");
         }
     }
 }

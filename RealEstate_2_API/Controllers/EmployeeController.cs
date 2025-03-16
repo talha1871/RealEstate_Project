@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RealEstate_2_API.Dtos.EmployeeDtos;
 using RealEstate_2_API.Repositories.AgentRepositories;
 
 namespace RealEstate_2_API.Controllers
@@ -23,7 +24,29 @@ namespace RealEstate_2_API.Controllers
             return Ok(values);
         }
 
+        [HttpPut]
 
+        public async Task<IActionResult> UpdateEmployee(UpdateEmployeeDto updateEmployeeDto) //Kategori Silme İşlemi Adım-3
+        {
+            _agentRepo.UpdateAgent(updateEmployeeDto);
+            return Ok("Employee Başarılı Bir Şekilde Güncellendi!");
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> CreateAgent(CreateEmployeeDto createEmployeeDto)
+        {
+            _agentRepo.CreateAgent(createEmployeeDto);
+            return Ok("Employee Başarıyla Eklendi!");
+        }
+
+        [HttpDelete("{id}")]
+
+        public async Task<IActionResult> DeleteEmployee(int id) //Kategori Silme İşlemi Adım-3
+        {
+            _agentRepo.DeleteAgent(id);
+            return Ok("Employee Başarılı Bir Şekilde Silindi!");
+        }
 
     }
 }
